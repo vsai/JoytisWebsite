@@ -1,0 +1,10 @@
+body { padding-top: 70px; }
+
+.font_col {
+	color: blue;
+}
+
+.font_col:hover{
+	color: green;
+	font-size: 250%;
+}
