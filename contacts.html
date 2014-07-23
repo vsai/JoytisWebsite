@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Joyti's Impex Ltd.</title>
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/stylish.css'>
+  </head>
+
+  <body>
+    <script src='js/jquery-1.11.1.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+
+    <div class='container'>
+      <div class='row' id="header">
+        <nav class="navbar navbar-fixed-top" role="navigation">
+          <div class="container"> <!--leaves edges on the side of the navbar !-->
+            <img src="img/jillogo.jpg" class="navbar-brand">
+            <a class="navbar-brand" href="#">Joyti's Impex Ltd.</a>
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li class="active"><a href="contacts.html">Contact Us</a></li>
+          </div>
+        </nav>
+      </div>
+
+      <div class="content">
+        <div id='contacts' class="row">
+          <!-- <div class="col-md-1"></div> -->
+          <div id="feedbackForm" class="col-md-5">
+            <form class="form-horizontal">
+              <div class="form-group">
+                    <label for="inputName" class="control-label col-xs-3">Name</label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" id="inputName" placeholder="Enter Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="control-label col-xs-3">Company</label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter Company">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress" class="control-label col-xs-3">Address</label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputTelephone" class="control-label col-xs-3">Telephone</label>
+                    <div class="col-xs-9">
+                        <input type="tel" class="form-control" id="inputTelephone" placeholder="Enter Telephone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputFax" class="control-label col-xs-3">Fax</label>
+                    <div class="col-xs-9">
+                        <input type="tel" class="form-control" id="inputFax" placeholder="Enter Fax">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="control-label col-xs-3">Email</label>
+                    <div class="col-xs-9">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCategory" class="control-label col-xs-3">Category</label>
+                    <div class="col-xs-9">
+                        <input type="text" class="form-control" id="inputCategory" placeholder="Enter Category">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputMessage" class="control-label col-xs-3">Message</label>
+                    <div class="col-xs-9">
+                        <textarea id="inputMessage" placeholder="Enter message" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-3 col-xs-9">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5" id="contactDetails">
+            <form class="form-horizontal">
+              <!-- <div class="form-group"> -->
+                <label class="control-label col-xs-4">Contact Person:</label>
+                <div class="col-xs-8">
+                  <p class="form-control-static">Ms. Himmy Yuen</p>
+                </div>
+              <!-- </div> -->
+              <!-- <div class="form-group"> -->
+                <label class="control-label col-xs-4">Telephone:</label>
+                <div class="col-xs-8">
+                  <p class="form-control-static">(852) 2522-0150</p>
+                </div>
+              <!-- </div> -->
+              <!-- <div class="form-group"> -->
+                <label class="control-label col-xs-4">Fax:</label>
+                <div class="col-xs-8">
+                  <p class="form-control-static">(852) 2868-1672</p>
+                </div>
+              <!-- </div> -->
+              <!-- <div class="form-group"> -->
+                <label class="control-label col-xs-4">Postal address:</label>
+                <div class="col-xs-8">
+                  <p class="form-control-static">Room 10B, Wardley Centre,<br>9-11 Prat Avenue, T.S.T.,<br>Kowloon, Hong Kong</p>
+                </div>
+              <!-- </div> -->
+              <!-- <div class="form-group"> -->
+                <label class="control-label col-xs-4">Email:</label>
+                <div class="col-xs-8">
+                  <a href="mailto:jil@joytis.com?subject=Inquiry"><p class="form-control-static">jil@joytis.com</p></a>
+                </div>
+              <!-- </div> -->
+
+            </form>
+            <!-- <strong>Contact Person:</strong> Ms. Himmy Yuen<br>
+            <strong>Telephone:</strong> (852) 2522-0150<br>
+            <strong>Fax:</strong> (852) 2868-1672<br>
+            <strong>Postal address:</strong> Room 10B, Wardley Centre, 9-11 Prat Avenue, T.S.T., Kowloon, Hong Kong<br>
+            <strong>Email:</strong> jil@joytis.com<br> -->
+          </div>
+          <div class="col-md-1"></div>
+          <!-- <div class="col-md-4">
+            <strong>Contact Person:</strong><br>
+            <strong>Telephone:</strong><br>
+            <strong>Fax:</strong><br>
+            <strong>Postal address:</strong><br>
+            <strong>Email:</strong><br>
+            Ms. Himmy Yuen<br>
+            (852) 2522-0150<br>
+            (852) 2868-1672<br>
+            Room 10B, Wardley Centre, 9-11 Prat Avenue, T.S.T., Kowloon, Hong Kong  <br>
+            jil@joytis.com<br>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,10 +1,107 @@
-body { padding-top: 70px; }
+/*color scheme
+dark bluish grey -- rgb(45,60,77)
+orange -- rgb(223, 133, 0)
+blue -- rgb(44, 78, 134)
+light blue -- rgb(96, 186, 227)
+*/
 
-.font_col {
+body { 
+	padding-top: 50px;
+	/*color: white;*/
+	color: black;
+	/*background-color: rgb(96,186,227);*/
+}
+
+/*.container {*/
+	/*background-color:white;*/
+/*}*/
+
+/*.font_col {
 	color: blue;
 }
 
 .font_col:hover{
 	color: green;
 	font-size: 250%;
+}*/
+
+#home, #products, #services, #aboutus, #contacts{
+	padding-top: 40px;
+}
+
+#feedbackForm {
+	padding: 15px;
+	/*border-style: solid;*/
+	border-color: black;
+}
+
+#contactDetails {
+	padding-top: 75px;
+	padding-bottom: 75px;
+	/*vertical-align: middle;*/
+	/*color:green;*/
+}
+#contactDetails .control-label {
+	text-align: left;
+}
+
+.footer {
+	padding-top: 30px;
+}
+
+.copyright {
+	text-align: right;
+}
+
+.aboutus_titles {
+	/*color: rgb(44,78,134);*/
+	color: rgb(223,133,0)
+}
+
+.navbar-brand {
+	color: white;
+}
+
+img .navbar-brand {
+}
+
+.navbar {
+	background-color: rgb(44,78,134);
+	/*background-color: white;*/
+}
+
+.navbar-nav {
+	/*background-color: rgb(44,78,134);*/
+	/*background-color: white;*/
+}
+
+.navbar-nav > li > a {
+  /*font-size: 16px;*/
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  border-bottom: 4px solid transparent;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  /*background-color: transparent;*/
+  background-color: white;
+  /*color:pink;*/
+  color:rgb(223,133,0);
+  border-bottom-color: rgb(223,133,0);
+  /*border-bottom-color: rgb(96,186,227);*/
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+
+  /*background-color: white;*/
+  background-color: rgb(223,133,0);
+  color:white;
+  /*color:black;*/
+  border-bottom-color: rgb(96,186,227);
+  border-bottom-color: white;
+  /*border-bottom-color: rgb(45,60,77);*/
 }
