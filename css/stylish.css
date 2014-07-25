@@ -1,78 +1,61 @@
 /*color scheme
 dark bluish grey -- rgb(45,60,77)
-orange -- rgb(223, 133, 0)
-blue -- rgb(44, 78, 134)
-light blue -- rgb(96, 186, 227)
+orange -- rgb(223,133,0)
+blue -- rgb(44,78,134)
+light blue -- rgb(96,186,227)
 */
 
-body { 
-	padding-top: 50px;
-	/*color: white;*/
-	color: black;
-	/*background-color: rgb(96,186,227);*/
+html {
+  position: relative;
+  height: 100%;
 }
 
-/*.container {*/
-	/*background-color:white;*/
-/*}*/
-
-/*.font_col {
-	color: blue;
-}
-
-.font_col:hover{
-	color: green;
-	font-size: 250%;
-}*/
-
-#home, #products, #services, #aboutus, #contacts{
+body {
+	height: 100%;
 	padding-top: 40px;
+	color: black; /*text color*/
+	background-color: rgb(96,186,227); /*light blue*/
+	background-color: rgb(45,60,77); /*dark bluish grey*/
+	margin-bottom: 60px; /* Margin bottom by footer height */
 }
 
-#feedbackForm {
-	padding: 15px;
-	/*border-style: solid;*/
-	border-color: black;
+#notifier {
+	padding-top: 20px;
 }
 
-#contactDetails {
-	padding-top: 75px;
-	padding-bottom: 75px;
-	/*vertical-align: middle;*/
-	/*color:green;*/
-}
-#contactDetails .control-label {
-	text-align: left;
+.required:after {
+	color:red;
+    content: "*";
+    padding-left:1%;
 }
 
-.footer {
-	padding-top: 30px;
+.form-control{
+    width:97%;
+    float:left;
 }
 
-.copyright {
-	text-align: right;
+.container:not(#navi) {
+	background-color: white;
 }
 
-.aboutus_titles {
-	/*color: rgb(44,78,134);*/
-	color: rgb(223,133,0)
+.navbar-brand img {
+	width: 100px;
+	height: auto;
 }
 
 .navbar-brand {
 	color: white;
-}
-
-img .navbar-brand {
+	font-size: 26px;
 }
 
 .navbar {
-	background-color: rgb(44,78,134);
-	/*background-color: white;*/
+	background-color: rgb(44,78,134); /*blue*/
+	background-color: rgb(96,186,227); /*light blue*/
+	background-color: rgb(45,60,77); /*dark bluish grey*/
 }
 
-.navbar-nav {
-	/*background-color: rgb(44,78,134);*/
-	/*background-color: white;*/
+#navi {
+	background-color: rgb(44,78,134); /*blue*/
 }
 
 .navbar-nav > li > a {
@@ -85,23 +68,52 @@ img .navbar-brand {
 
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus {
-  /*background-color: transparent;*/
   background-color: white;
-  /*color:pink;*/
-  color:rgb(223,133,0);
-  border-bottom-color: rgb(223,133,0);
-  /*border-bottom-color: rgb(96,186,227);*/
+  color: rgb(223,133,0); /*orange*/
+  border-bottom-color: rgb(223,133,0); /*orange*/
 }
 
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
-
-  /*background-color: white;*/
-  background-color: rgb(223,133,0);
-  color:white;
-  /*color:black;*/
-  border-bottom-color: rgb(96,186,227);
+  background-color: rgb(223,133,0); /*orange*/
+  color: white;
   border-bottom-color: white;
-  /*border-bottom-color: rgb(45,60,77);*/
+}
+
+.content {
+	padding-top: 30px;
+}
+
+#home {
+	padding-top: 80px;
+}
+
+#feedbackForm {
+	/*padding: 15px;*/
+	/*border-style: solid;*/
+	/*border-color: black;*/
+}
+
+#contactDetails {
+	padding-top: 75px;
+	padding-bottom: 75px;
+}
+
+#contactDetails .control-label {
+	text-align: left;
+}
+
+.footer {
+	padding-top: 30px;
+  	background-color: white;
+}
+
+.copyright {
+	text-align: right;
+}
+
+.aboutus_titles {
+	color: rgb(223,133,0); /*orange*/
+	color: black;
 }

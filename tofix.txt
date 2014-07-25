@@ -1,0 +1,16 @@
+Things to fix:
+
+- Feedback form:
+---- alert should not shift the whole page down.
+---- if failure, make all the required boxes turn red
+---- if success return everythin to normal
+
+- Footer on every page:
+---- Sticky footer that you can always see at the bottom of the page. Does not tag onto the bottom of the text.
+
+
+- Header:
+---- New two line header, with navbar of shorter height than title bar
+---- Navbar central and justified across
+---- Standardize across all pages.
+

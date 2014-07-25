@@ -12,12 +12,25 @@
   <body>
     <script src='js/jquery-1.11.1.min.js'></script>
     <script src='js/bootstrap.min.js'></script>
-
+    <script type="text/template" id="errorMessage">
+      <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Error!</strong> You did not input all required fields. See below for the ones you have missed.
+      </div>
+    </script>
+    <script type="text/template" id="successMessage">
+      <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Success!</strong> Your details sent to Joytis and will be contacted shortly.
+      </div>
+    </script>
     <div class='container'>
+      <div id="notifier">  
+      </div>
       <div class='row' id="header">
         <nav class="navbar navbar-fixed-top" role="navigation">
-          <div class="container"> <!--leaves edges on the side of the navbar !-->
-            <img src="img/jillogo.jpg" class="navbar-brand">
+          <div class="container" id="navi"> <!--leaves edges on the side of the navbar !-->
+            <img src="img/jillogo.gif" class="navbar-brand">
             <a class="navbar-brand" href="#">Joyti's Impex Ltd.</a>
             <ul class="nav navbar-nav">
               <li><a href="index.html">Home</a></li>
@@ -25,72 +38,79 @@
               <li><a href="services.html">Services</a></li>
               <li><a href="products.html">Products</a></li>
               <li class="active"><a href="contacts.html">Contact Us</a></li>
+            </ul>
           </div>
         </nav>
       </div>
 
       <div class="content">
         <div id='contacts' class="row">
-          <!-- <div class="col-md-1"></div> -->
           <div id="feedbackForm" class="col-md-5">
-            <form class="form-horizontal">
+            <form class="form-horizontal" id="fdform">
               <div class="form-group">
-                    <label for="inputName" class="control-label col-xs-3">Name</label>
+                    <label for="inputName" class="control-label col-xs-3 required ">Name</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" id="inputName" placeholder="Enter Name">
+                        <input type="text" class="form-control" id="inputName" placeholder="Enter Name" name="Name">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" class="control-label col-xs-3">Company</label>
+                    <label for="inputEmail" class="control-label col-xs-3 required">Company</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter Company">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Enter Company" name="Company">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress" class="control-label col-xs-3">Address</label>
+                    <label for="inputAddress" class="control-label col-xs-3 required">Address</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address" name="Address">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputTelephone" class="control-label col-xs-3">Telephone</label>
+                    <label for="inputTelephone" class="control-label col-xs-3 required">Telephone</label>
                     <div class="col-xs-9">
-                        <input type="tel" class="form-control" id="inputTelephone" placeholder="Enter Telephone">
+                        <input type="tel" class="form-control" id="inputTelephone" placeholder="Enter Telephone" name="Telephone">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputFax" class="control-label col-xs-3">Fax</label>
+                    <label for="inputFax" class="control-label col-xs-3 required">Fax</label>
                     <div class="col-xs-9">
-                        <input type="tel" class="form-control" id="inputFax" placeholder="Enter Fax">
+                        <input type="tel" class="form-control" id="inputFax" placeholder="Enter Fax" name="Fax">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" class="control-label col-xs-3">Email</label>
+                    <label for="inputEmail" class="control-label col-xs-3 required">Email</label>
                     <div class="col-xs-9">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter Email">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter Email" name="Email">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputCategory" class="control-label col-xs-3">Category</label>
+                    <label for="inputCategory" class="control-label col-xs-3 required">Category</label>
                     <div class="col-xs-9">
-                        <input type="text" class="form-control" id="inputCategory" placeholder="Enter Category">
+                        <input type="text" class="form-control" id="inputCategory" placeholder="Enter Category" name="Category">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputMessage" class="control-label col-xs-3">Message</label>
+                    <label for="inputMessage" class="control-label col-xs-3 required">Message</label>
                     <div class="col-xs-9">
-                        <textarea id="inputMessage" placeholder="Enter message" class="form-control" rows="4"></textarea>
+                        <textarea id="inputMessage" placeholder="Enter message" class="form-control" rows="4" name="Message"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-xs-offset-3 col-xs-9">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <label class="required">Required</label><br>
+                        <button type="submit" onSubmit="validateFeedbackForm()" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </form>
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-5" id="contactDetails">
+            <!-- <ul>
+              <li><img src="img/contactus_icons_telephone.jpg"></li>
+              <li><img src="img/contactus_icons_fax.jpg"></li>
+              <li><img src="img/contactus_icons_postal.jpg"></li>
+              <li><img src="img/contactus_icons_email.jpg"></li>
+            </ul> -->
             <form class="form-horizontal">
               <!-- <div class="form-group"> -->
                 <label class="control-label col-xs-4">Contact Person:</label>
@@ -99,24 +119,28 @@
                 </div>
               <!-- </div> -->
               <!-- <div class="form-group"> -->
+                <!-- <img src="img/contactus_icons_telephone.jpg"> -->
                 <label class="control-label col-xs-4">Telephone:</label>
                 <div class="col-xs-8">
                   <p class="form-control-static">(852) 2522-0150</p>
                 </div>
               <!-- </div> -->
               <!-- <div class="form-group"> -->
+              <!-- <img src="img/contactus_icons_fax.jpg"> -->
                 <label class="control-label col-xs-4">Fax:</label>
                 <div class="col-xs-8">
                   <p class="form-control-static">(852) 2868-1672</p>
                 </div>
               <!-- </div> -->
               <!-- <div class="form-group"> -->
+              <!-- <img src="img/contactus_icons_postal.jpg"> -->
                 <label class="control-label col-xs-4">Postal address:</label>
                 <div class="col-xs-8">
                   <p class="form-control-static">Room 10B, Wardley Centre,<br>9-11 Prat Avenue, T.S.T.,<br>Kowloon, Hong Kong</p>
                 </div>
               <!-- </div> -->
               <!-- <div class="form-group"> -->
+              <!-- <img src="img/contactus_icons_email.jpg"> -->
                 <label class="control-label col-xs-4">Email:</label>
                 <div class="col-xs-8">
                   <a href="mailto:jil@joytis.com?subject=Inquiry"><p class="form-control-static">jil@joytis.com</p></a>
@@ -124,29 +148,55 @@
               <!-- </div> -->
 
             </form>
-            <!-- <strong>Contact Person:</strong> Ms. Himmy Yuen<br>
-            <strong>Telephone:</strong> (852) 2522-0150<br>
-            <strong>Fax:</strong> (852) 2868-1672<br>
-            <strong>Postal address:</strong> Room 10B, Wardley Centre, 9-11 Prat Avenue, T.S.T., Kowloon, Hong Kong<br>
-            <strong>Email:</strong> jil@joytis.com<br> -->
           </div>
           <div class="col-md-1"></div>
-          <!-- <div class="col-md-4">
-            <strong>Contact Person:</strong><br>
-            <strong>Telephone:</strong><br>
-            <strong>Fax:</strong><br>
-            <strong>Postal address:</strong><br>
-            <strong>Email:</strong><br>
-            Ms. Himmy Yuen<br>
-            (852) 2522-0150<br>
-            (852) 2868-1672<br>
-            Room 10B, Wardley Centre, 9-11 Prat Avenue, T.S.T., Kowloon, Hong Kong  <br>
-            jil@joytis.com<br>
-          </div> -->
         </div>
-
+      </div>
+      <div class="footer row">
+        <div class="col-lg-6">
+          <p>
+            <a href="careers.html">Career</a> | 
+            <a href="termsofuse.html">Terms of Use</a> | 
+            <a href="privacypoly.html">Privacy Policy</a>
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <p class="text-muted copyright">&copy Joyti's Impex Ltd. All rights reserved</p>
+        </div>
       </div>
     </div>
+    <script type="text/javascript">
+      var validate = function() {
+        var required = $(".required");
+        var falseFields = [];
+        for (var i=0 ; i<required.length ; i++) {
+          var forElemId = "#" + required[i].htmlFor;
+          var requiredFieldVal = $(forElemId).val();
+          if (requiredFieldVal === "") {
+            // console.log("empty param");
+            var attr = $(forElemId).attr("name");
+            falseFields.push(attr);
+          }
+        }
+        if (falseFields.length > 0) {
+          return false;
+        }
+        return true;
+      }
+
+      $( "#fdform" ).on( "submit", function( event ) {
+        event.preventDefault();
+        var formSuccess = validate();
+        if (formSuccess) {
+          console.log( $( this ).serialize() );
+          $(this).trigger("reset");
+          $("#notifier").html($("#successMessage").html());
+        } else {
+          $("#notifier").html($("#errorMessage").html());
+        }
+        
+      });
+    </script>
   </body>
 
 </html>
