@@ -5,6 +5,9 @@ blue -- rgb(44,78,134)
 light blue -- rgb(96,186,227)
 */
 
+
+/* BEGIN ALL html pages */
+
 html {
   position: relative;
   height: 100%;
@@ -19,20 +22,6 @@ body {
 	margin-bottom: 60px; /* Margin bottom by footer height */
 }
 
-#notifier {
-	padding-top: 20px;
-}
-
-.required:after {
-	color:red;
-    content: "*";
-    padding-left:1%;
-}
-
-.form-control{
-    width:97%;
-    float:left;
-}
 
 .container:not(#navi) {
 	background-color: white;
@@ -85,9 +74,25 @@ body {
 	padding-top: 30px;
 }
 
-#home {
-	padding-top: 80px;
+.footer {
+	padding-top: 30px;
+  	background-color: white;
 }
+
+.copyright {
+	text-align: right;
+}
+
+/* END ALL html pages*/
+
+/* BEGIN index.html */
+#home {
+	padding-top: 30px;
+}
+
+/* END index.html */
+
+/* BEGIN contacts.html */
 
 #feedbackForm {
 	/*padding: 15px;*/
@@ -104,16 +109,40 @@ body {
 	text-align: left;
 }
 
-.footer {
-	padding-top: 30px;
-  	background-color: white;
+#notifier {
+	padding-top: 20px;
 }
 
-.copyright {
-	text-align: right;
+.required:after {
+	color:red;
+    content: "*";
+    padding-left:1%;
 }
+
+.form-control{
+    width:97%;
+    float:left;
+}
+
+/* END contacts.html */
+
+/* BEGIN products.html */
+
+#catalogue_list {
+	padding: 50px;
+}
+.catalogue_item {
+	color: green;
+	font-size: 20px;
+}
+
+/* END products.html */
+
+/* BEGIN aboutus.html */
 
 .aboutus_titles {
-	color: rgb(223,133,0); /*orange*/
 	color: black;
 }
+
+/* END aboutus.html */
+

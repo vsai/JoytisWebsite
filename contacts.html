@@ -112,41 +112,26 @@
               <li><img src="img/contactus_icons_email.jpg"></li>
             </ul> -->
             <form class="form-horizontal">
-              <!-- <div class="form-group"> -->
-                <label class="control-label col-xs-4">Contact Person:</label>
-                <div class="col-xs-8">
-                  <p class="form-control-static">Ms. Himmy Yuen</p>
-                </div>
-              <!-- </div> -->
-              <!-- <div class="form-group"> -->
-                <!-- <img src="img/contactus_icons_telephone.jpg"> -->
-                <label class="control-label col-xs-4">Telephone:</label>
-                <div class="col-xs-8">
-                  <p class="form-control-static">(852) 2522-0150</p>
-                </div>
-              <!-- </div> -->
-              <!-- <div class="form-group"> -->
-              <!-- <img src="img/contactus_icons_fax.jpg"> -->
-                <label class="control-label col-xs-4">Fax:</label>
-                <div class="col-xs-8">
-                  <p class="form-control-static">(852) 2868-1672</p>
-                </div>
-              <!-- </div> -->
-              <!-- <div class="form-group"> -->
-              <!-- <img src="img/contactus_icons_postal.jpg"> -->
-                <label class="control-label col-xs-4">Postal address:</label>
-                <div class="col-xs-8">
-                  <p class="form-control-static">Room 10B, Wardley Centre,<br>9-11 Prat Avenue, T.S.T.,<br>Kowloon, Hong Kong</p>
-                </div>
-              <!-- </div> -->
-              <!-- <div class="form-group"> -->
-              <!-- <img src="img/contactus_icons_email.jpg"> -->
-                <label class="control-label col-xs-4">Email:</label>
-                <div class="col-xs-8">
-                  <a href="mailto:jil@joytis.com?subject=Inquiry"><p class="form-control-static">jil@joytis.com</p></a>
-                </div>
-              <!-- </div> -->
-
+              <label class="control-label col-xs-4">Contact Person:</label>
+              <div class="col-xs-8">
+                <p class="form-control-static">Ms. Himmy Yuen</p>
+              </div>
+              <label class="control-label col-xs-4">Telephone:</label>
+              <div class="col-xs-8">
+                <p class="form-control-static">(852) 2522-0150</p>
+              </div>
+              <label class="control-label col-xs-4">Fax:</label>
+              <div class="col-xs-8">
+                <p class="form-control-static">(852) 2868-1672</p>
+              </div>
+              <label class="control-label col-xs-4">Postal address:</label>
+              <div class="col-xs-8">
+                <p class="form-control-static">Room 10B, Wardley Centre,<br>9-11 Prat Avenue, T.S.T.,<br>Kowloon, Hong Kong</p>
+              </div>
+              <label class="control-label col-xs-4">Email:</label>
+              <div class="col-xs-8">
+                <a href="mailto:jil@joytis.com?subject=Inquiry"><p class="form-control-static">jil@joytis.com</p></a>
+              </div>
             </form>
           </div>
           <div class="col-md-1"></div>
@@ -173,11 +158,12 @@
           var forElemId = "#" + required[i].htmlFor;
           var requiredFieldVal = $(forElemId).val();
           if (requiredFieldVal === "") {
-            // console.log("empty param");
+            // Required field is empty
             var attr = $(forElemId).attr("name");
             falseFields.push(attr);
           }
         }
+        // TODO: For each empty required field, make the box turn red
         if (falseFields.length > 0) {
           return false;
         }
@@ -194,9 +180,7 @@
         } else {
           $("#notifier").html($("#errorMessage").html());
         }
-        
       });
     </script>
   </body>
-
 </html>
