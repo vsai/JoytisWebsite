@@ -1,6 +1,7 @@
 /*color scheme
 dark bluish grey -- rgb(45,60,77)
-orange -- rgb(223,133,0)
+OLDorange -- rgb(223,133,0)
+orange -- rgb(204,120,0)
 blue -- rgb(44,78,134)
 light blue -- rgb(96,186,227)
 */
@@ -22,56 +23,84 @@ body {
 	margin-bottom: 60px; /* Margin bottom by footer height */
 }
 
-
 .container:not(#navi) {
 	background-color: white;
 }
 
-.navbar-brand img {
-	width: 100px;
-	height: auto;
+#header_logo {
+	padding-top: 10px;
+	width: 200px;
+	height: 100px;
 }
 
 .navbar-brand {
 	color: white;
-	font-size: 26px;
+	font-size: 30px;
+	padding-top: 30px;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: rgb(204,120,0);
 }
 
 .navbar {
 	background-color: rgb(44,78,134); /*blue*/
 	background-color: rgb(96,186,227); /*light blue*/
 	background-color: rgb(45,60,77); /*dark bluish grey*/
+	/*padding-top: 5px;*/
 }
 
 #navi {
 	background-color: rgb(44,78,134); /*blue*/
+	padding-top: 10px;
+}
+
+.navbar-nav {
+	padding-top: 10px;
 }
 
 .navbar-nav > li > a {
-  /*font-size: 16px;*/
   text-transform: uppercase;
   color: white;
-  font-weight: bold;
   border-bottom: 4px solid transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+ 
 }
 
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus {
   background-color: white;
-  color: rgb(223,133,0); /*orange*/
-  border-bottom-color: rgb(223,133,0); /*orange*/
+  color: rgb(204,120,0); /*orange*/
+  border-bottom-color: rgb(204,120,0); /*orange*/
 }
 
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
-  background-color: rgb(223,133,0); /*orange*/
+  background-color: rgb(204,120,0); /*orange*/
   color: white;
   border-bottom-color: white;
 }
 
 .content {
-	padding-top: 30px;
+	padding: 5%;
+	padding-top: 300px;
+}
+
+@media (min-width: 558px) {
+  .content {
+	padding: 5%;
+	padding-top: 250px;
+	}
+}
+
+@media (min-width: 768px) {
+  .content {
+	padding: 5%;
+	padding-top: 100px;
+	}
 }
 
 .footer {
@@ -83,6 +112,7 @@ body {
 	text-align: right;
 }
 
+
 /* END ALL html pages*/
 
 /* BEGIN index.html */
@@ -90,26 +120,35 @@ body {
 	padding-top: 30px;
 }
 
+#home_description {
+	padding-bottom: 50px;
+}
+
+.home_desc {
+	color: rgb(204,120,0);
+	font-weight: bold;
+}
+
 /* END index.html */
 
 /* BEGIN contacts.html */
 
-#feedbackForm {
-	/*padding: 15px;*/
-	/*border-style: solid;*/
-	/*border-color: black;*/
-}
+/*#feedbackForm {
+	padding: 15px;
+	border-style: solid;
+	border-color: black;
+}*/
 
-#contactDetails {
+/*#contactDetails {
 	padding-top: 75px;
 	padding-bottom: 75px;
-}
+}*/
 
 #contactDetails .control-label {
 	text-align: left;
 }
 
-#notifier {
+/*#notifier {
 	padding-top: 20px;
 }
 
@@ -118,7 +157,7 @@ body {
     content: "*";
     padding-left:1%;
 }
-
+*/
 .form-control{
     width:97%;
     float:left;
@@ -128,9 +167,10 @@ body {
 
 /* BEGIN products.html */
 
-#catalogue_list {
+/*#catalogue_list {
 	padding: 50px;
-}
+}*/
+
 .catalogue_item {
 	color: green;
 	font-size: 20px;

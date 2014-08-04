@@ -14,3 +14,20 @@ Things to fix:
 ---- Navbar central and justified across
 ---- Standardize across all pages.
 
+
+
+
+
+LOGO and Header
+
+http://www.kullaspost.com/
+
+Copy "ABOUT US" from there
+
+Display Products in the Same manner, using Product list
+>>Main category, sub category examples
+
+
+
+
+Services page: Don't extend text across FULL page. Perhaps put a padding on the inside
