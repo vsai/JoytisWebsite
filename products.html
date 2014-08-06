@@ -33,12 +33,19 @@
       </div>
 
       <div class="content">
+        <div id="catalogues">
+          <div class="row">
+            <h2>Product Catalogues</h2>
+          </div>
+          <div id="catalogue_list" class="row">
+          </div>
+        </div>
         <div id="products">
           <div class="row">
-            <div id="catalogue_list">
-            </div>
+            <h2>Products</h2>
           </div>
-
+          <div id="product_list" class="row">
+          </div>
         </div>
       </div>
 
@@ -55,22 +62,92 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-      var createUrl = function(url, titleName) {
-        return "<a href='" + url + "' target='_blank' class='catalogue_item'>" + titleName + "</a><br>";
-      }
+    
+    <script src="js/mustache.js"></script>
 
-      var catalogues = [
-        {Link: "flipbooktest/test.html", TitleName: "Test1"},
-        {Link: "flipbooktest/test.html", TitleName: "Test2"}
-      ];
+    <script src='js/catalogues.js'></script>
+
+    <script id="catalogue_template" type="x-tmpl-mustache">
+      <!--<div class='col-md-4 text-center'>-->
+      <div class='col-md-4 col-sm-6 text-center'>
+        <a href='{{ page_url }}' target='_blank' class='catalogue_item'>
+          <img src='{{ image_url }}'><br>
+          {{title}}
+        </a>
+      </div>
+    </script>
+
+    <script id="catalogue_row" type="x-tmpl-mustache">
+      <hr class="featurette-divider">
+      <div class='row catalogue featurette'>
+      </div>
+    </script>
+
+    <script type="text/javascript">
+      //note: keep this consisten with column with in catalogue template
+      //num_catalogues_per_line * width_of_column = 12
+      var num_catalogues_per_line = 3;
+      var catalogue_template = $("#catalogue_template").html();
+      Mustache.parse(catalogue_template);
 
       for (var c = 0 ; c < catalogues.length ; c++) {
+        if (c%num_catalogues_per_line === 0) {
+          $("#catalogue_list").append($("#catalogue_row").html());
+        }
         var catalogue = catalogues[c];
-        var webpage_link = createUrl(catalogue.Link, catalogue.TitleName);
-        $("#catalogue_list").append(webpage_link);
-      }
+        var obj = {
+                    page_url: catalogue.Link+"index.html",
+                    image_url: catalogue.Link+"files/shot.png",
+                    title: catalogue.TitleName
+                  };
+        var output = Mustache.render(catalogue_template, obj);
 
+        var last_row = $("#catalogue_list").children('.row').last();
+        last_row.append(output);
+      }
+    </script>
+
+    <script src='js/products_categories.js'></script>
+
+    <script id="product_template" type="x-tmpl-mustache">
+      <div class='col-lg-6'>
+        <h4>{{ product_name }}</h4>
+        {{ product_examples }}
+      </div>
+    </script>
+
+    <script id="product_row" type="x-tmpl-mustache">
+      <hr class="featurette-divider">
+      <div class='row product featurette'>
+      </div>
+    </script>
+
+    <script type="text/javascript">
+      var product_template = $("#product_template").html();
+      Mustache.parse(product_template);
+
+      for (var i = 0 ; i < products_categories.length ; i++) {
+        if (i%2 === 0) {
+          $("#product_list").append($("#product_row").html());
+        }
+        var p = products_categories[i];
+        var examples = "";
+        var num_examples_to_display = Math.min(p.examples.length,4);
+        for (var j = 0; j < num_examples_to_display ; j++) {
+          examples += p.examples[j];
+          if (j < num_examples_to_display - 1) {
+            examples += ", ";
+          }
+        }
+        var obj = {
+                    product_name: p.product,
+                    product_examples: examples
+                  };
+        var output = Mustache.render(product_template, obj);
+
+        var last_row = $("#product_list").children('.row').last();
+        last_row.append(output);
+      }
     </script>
 	</body>
 
